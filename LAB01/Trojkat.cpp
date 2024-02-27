@@ -29,7 +29,7 @@ void Trojkat::SetB(double b) {
  this -> b = b;
 }
 
-void Trojkat::SetB(double c) {
+void Trojkat::SetC(double c) {
  this -> c = c;
 }
 

@@ -33,7 +33,7 @@ double Prostokat::Pole() {
 }
 
 void Prostokat::Wypisz(std::ostream& out) const {
-  cout << "Prostokąt o bokach a = " << a <<", b = " << b << ")" << endl;
+  cout << "Prostokąt o bokach a = " << a <<", b = " << b << endl;
 }
 
 Prostokat::~Prostokat() {
