@@ -2,6 +2,7 @@
 #include "Prostokat.h"
 #include "Trojkat.h"
 #include "Kolo.h"
+#include "Stozek.h"
 
 using namespace std;
 
@@ -28,8 +29,8 @@ void Funkcja2(){ // Wirtualne bo sa nadpisywane
 	FiguraPlaska* tab[3] = { new Prostokat(6,2), new Trojkat(12, 17, 15), new Kolo(8) };
 	for(int i = 0; i < 3; i++)
 	{
-		cout << "Obwod figury " << i + 1 << ": " << tab[i]->Obwod() << endl; // jakby nie byly wirtualne
-		cout << "Pole figury " << i + 1 << ": " << tab[i]->Pole() << endl; // to zostalaby uruchomione metody dla FiguraPlaska
+		cout << "Obwod " << i + 1 << ": " << tab[i]->Obwod() << endl; // jakby nie byly wirtualne
+		cout << "Pole " << i + 1 << ": " << tab[i]->Pole() << endl; // to zostalaby uruchomione metody dla FiguraPlaska
 		delete tab[i]; // Zwolnienie pamieci
 	}
 	cout << endl;
@@ -44,11 +45,21 @@ int Funkcja3(int x, int y, int z){ // overloading
 }
 // overriding jest uzywany w kazdej figurze w funkcji wypisz -> nadpisuje metode
 
+void FunckjaLAB(){
+  Stozek stozek(1, 3);
+  Stozek* stozekWsk = new Stozek(5, 6);
+  cout << "Tworzaca Stozka(1, 3): " << stozek.Tworzaca() << endl;
+  cout << "Pole Powierzchni Boczenej Stozka(5, 6): " << stozekWsk->PolePowierzchniBocznej() << endl;
+  cout << "Pole Powierzchni Calkowitej Stozka(5, 6): " << stozekWsk->PolePowierzchniCalkowitej() << endl;
+  delete stozekWsk;
+}
+
 
 int main(){
   //Funkcja1();
   //Funkcja2();
   //cout << "Podpunkt 3, pierwsze wyjscie: " << Funkcja3(1, 2) << endl;
   //cout << "Podpunkt 3, drugie wyjscie: " << Funkcja3(1, 2, 3) << endl;
+  FunckjaLAB();
   return 0;
 }
