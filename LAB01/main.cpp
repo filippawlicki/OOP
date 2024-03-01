@@ -2,7 +2,7 @@
 #include "Prostokat.h"
 #include "Trojkat.h"
 #include "Kolo.h"
-#include "Stozek.h"
+#include "Prostopadl.h"
 
 using namespace std;
 
@@ -36,6 +36,22 @@ void Funkcja2(){ // Wirtualne bo sa nadpisywane
 	cout << endl;
 }
 
+void Funkcja4(){
+  FiguraPlaska* tab[10] = {};
+  for(int i = 0; i < 10; i++){
+    if(i%3 == 0){
+      tab[i] = new Kolo(i);
+    }
+    if(i%2 == 0){
+      tab[i] = new Prostokat(i, i);
+    }
+    if(i%5 == 0){
+      tab[i] = new Trojkat(i, i, i);
+    }
+    delete tab[i];
+  }
+}
+
 int Funkcja3(int x, int y){ // overloading
   return x + y;
 }
@@ -46,12 +62,14 @@ int Funkcja3(int x, int y, int z){ // overloading
 // overriding jest uzywany w kazdej figurze w funkcji wypisz -> nadpisuje metode
 
 void FunckjaLAB(){
-  Stozek stozek(1, 3);
-  Stozek* stozekWsk = new Stozek(5, 6);
-  cout << "Tworzaca Stozka(1, 3): " << stozek.Tworzaca() << endl;
-  cout << "Pole Powierzchni Boczenej Stozka(5, 6): " << stozekWsk->PolePowierzchniBocznej() << endl;
-  cout << "Pole Powierzchni Calkowitej Stozka(5, 6): " << stozekWsk->PolePowierzchniCalkowitej() << endl;
-  delete stozekWsk;
+  Prostopadl prostopadloscian(1, 2, 3);
+  Prostopadl prostopadloscianDwa(5);
+  Prostopadl* prostopadloscianWsk = new Prostopadl();
+
+  //cout << "Pole Calkowite (1, 2, 3): " << prostopadloscian.PolePowierzchniCalkowitej() << endl;
+  //cout << "Pole Boczne (5, 5, 5): " << prostopadloscianDwa.PolePowierzchniCalkowitej() << endl;
+
+  delete prostopadloscianWsk;
 }
 
 
@@ -60,6 +78,7 @@ int main(){
   //Funkcja2();
   //cout << "Podpunkt 3, pierwsze wyjscie: " << Funkcja3(1, 2) << endl;
   //cout << "Podpunkt 3, drugie wyjscie: " << Funkcja3(1, 2, 3) << endl;
+  //Funkcja4();
   FunckjaLAB();
   return 0;
 }
