@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Bryla.h"
 
 class Prostopadl : public Bryla{

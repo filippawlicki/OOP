@@ -1,3 +1,5 @@
+#pragma once
+
 #include "FiguraPlaska.h"
 
 class Kolo : public FiguraPlaska {
