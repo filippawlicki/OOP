@@ -12,7 +12,7 @@ class Book {
       std::cout << "Constructor with const lvalue(author: " << author << ", title: " << title << ")" << std::endl;
     }
     Book(std::string&& author, std::string&& title) : author(std::move(author)), title(std::move(title)) { // Konstruktor (r-referencje)
-      std::cout << "Constructor with rvalue(author: " << author << ", title: " << title << ")" << std::endl;
+      std::cout << "Constructor with rvalue(author: " << this->author << ", title: " << this->title << ")" << std::endl;
     }
 
     Book(const Book& other) : author(other.author), title(other.title) { // Konstruktor kopiujacy
