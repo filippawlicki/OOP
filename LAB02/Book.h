@@ -11,6 +11,9 @@ public:
   Book(const Book& other);
   Book(Book&& other);
 
+  Book& operator=(const Book& other);
+  Book& operator=(Book&& other);
+
   std::string GetAuthor() const;
   std::string GetTitle() const;
 
@@ -25,3 +28,5 @@ public:
 
   ~Book();
 };
+
+std::ostream& operator<<(std::ostream& ostr, const Book& book);

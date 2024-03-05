@@ -48,7 +48,7 @@ void Book::SetTitle(std::string&& newTitle) {
   title = std::move(newTitle);
 }
 
-Book::Book& operator=(const Book& other) { // Kopiujacy operator przypisania
+Book& Book::operator=(const Book& other) { // Kopiujacy operator przypisania
   std::cout << "Assignment operator with lvalue reference" << std::endl;
   if (this != &other) {
     author = other.author;
@@ -57,7 +57,7 @@ Book::Book& operator=(const Book& other) { // Kopiujacy operator przypisania
   return *this;
 }
 
-Book::Book& operator=(Book&& other) { // Przenoszacy operator przypisania
+Book& Book::operator=(Book&& other) { // Przenoszacy operator przypisania
   std::cout << "Assignment operator with rvalue reference" << std::endl;
   if (this != &other) {
     author = std::move(other.author);
