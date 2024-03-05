@@ -1,7 +1,6 @@
 #include "Book.h"
 
 #include <iostream>
-#include <string>
 
 Book::Book() : author("unknown"), title("unknown") { // Konstruktor bezparametrowy
   std::cout << "Constructor without parameters" << std::endl;
