@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 
 class Book {
   std::string author, title;
@@ -66,35 +67,32 @@ class Book {
       return *this;
     }
 
-    std::ostream& operator<<(std::ostream& ostr, const Book& book) {
-      ostr << "Book(author: " << author << ", title: " << title << ")";
-      return ostr;
-    }
-
     ~Book() {
       std::cout << "~Book(author: " << author << ", title: " << title << ")" << std::endl;
-
-      delete author;
-      delete title;
     }
 };
+
+std::ostream& operator<<(std::ostream& ostr, const Book& book) {
+  ostr << "Book(author: " << book.GetAuthor() << ", title: " << book.GetTitle() << ")";
+  return ostr;
+}
 
 int main(){
   std::string a="Sapkowski", t="Wiedzmin";
   Book e;
-  cout << "e: "<< e << endl;
+  std::cout << "e: "<< e << std::endl;
   Book b1 = {a, t};
-  cout << "b1: "<< b1 << endl;
+  std::cout << "b1: "<< b1 << std::endl;
   Book b2 = {"Mroz","Precedens"};
-  cout << "b2: "<< b2 << endl;
+  std::cout << "b2: "<< b2 << std::endl;
   Book b3 = b1;
-  cout << "b3: "<< b3 << " b1: " << b1 << endl;
+  std::cout << "b3: "<< b3 << " b1: " << b1 << std::endl;
   e = std::move(b2);
-  cout << "e: "<< e << " b2:" << b2 << endl;
+  std::cout << "e: "<< e << " b2:" << b2 << std::endl;
   e.SetAuthor("Remigiusz Mroz");
-  cout << "e: "<< e << endl;
+  std::cout << "e: "<< e << std::endl;
   e.SetTitle("Precedens - Chylka");
-  cout << "e: "<< e << endl;
+  std::cout << "e: "<< e << std::endl;
 
   return 0;
 }
