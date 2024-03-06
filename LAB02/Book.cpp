@@ -67,12 +67,6 @@ Book& Book::operator=(Book&& other) { // Przenoszacy operator przypisania
 
 Book::~Book() {
   std::cout << "~Book(author: " << author << ", title: " << title << ")" << std::endl;
-  if(title != nullptr) {
-    delete title;
-  }
-  if(author != nullptr) {
-    delete author;
-  }
 }
 
 std::ostream& operator<<(std::ostream& ostr, const Book& book) {

@@ -29,7 +29,6 @@ Library::Library(Library&& orig) : size(orig.size), array{new Book[orig.size]} {
   for(std::size_t i = 0; i < size; i++) {
     array[i] = orig.array[i];
   }
-  orig.size = nullptr;
   orig.array = nullptr;
 }
 
@@ -48,12 +47,12 @@ Library& Library::operator=(Library&& right) {
   return *this;
 }
 
-const Library& operator[](std::size_t i) const {
-  return array[i];
+const Book& Library::operator[](std::size_t index) const {
+  return array[index];
 }
 
-Library& operator[](std::size_t i) {
-  return array[i];
+Book& Library::operator[](std::size_t index) {
+  return array[index];
 }
 
 Library::~Library() {
