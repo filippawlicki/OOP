@@ -46,7 +46,7 @@ class Vector {
       return array[i];
     }
     double& operator[](std::size_t i) {
-    return array[i];
+      return array[i];
     }
 
     ~Vector() {
