@@ -73,3 +73,11 @@ std::ostream& operator<<(std::ostream& ostr, const Book& book) {
   ostr << "Book(author: " << book.GetAuthor() << ", title: " << book.GetTitle() << ")";
   return ostr;
 }
+
+void Book::SetChapter(int number, std::string newChapter){
+  spis[number] = newChapter;
+}
+
+std::string Book::GetChapter(int number){
+  return spis[number];
+}

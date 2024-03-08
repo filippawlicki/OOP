@@ -18,6 +18,13 @@ class Library {
     Book& operator[](std::size_t index);
     const Book& operator[](std::size_t index) const;
 
+    void AddNewBook();
+    void ShowBooksByAuthor();
+    void DeleteBook();
+    void CreateChapters();
+    void ShowChapters();
+    void EditBook();
+
     std::size_t GetSize() const;
 
     ~Library();
