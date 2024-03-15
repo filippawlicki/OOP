@@ -5,7 +5,7 @@ public class Obrot implements Transformacja {
   private final double a;
 
   public Obrot(double a) {
-    this.a = a;
+    this.a = Math.toRadians(a);
   }
   @Override
   public Punkt transformuj(Punkt p) {
