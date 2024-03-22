@@ -2,24 +2,24 @@ package pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wedrowka;
 
 
-public class Pole extends Wedrowka{
+public class ZalanaLakaTurzyc extends Wedrowka{
 
-    public Pole(double odleglosc){
+    public ZalanaLakaTurzyc(double odleglosc){
         super(odleglosc);
     }
 
     @Override
     public double modyfikujPredkoscGrupy(double predkosc){
-        return (predkosc * (0.75));
+        return (predkosc * (0.25));
     }
 
     @Override
     public int getTrudnoscNawigacyjna(){
-        return 3;
+        return 2;
     }
 
     @Override
     public String getNazwa(){
-        return "PoleBarszczuSosnowskiego";
+        return "Zalana Laka Turzyc";
     }
 }

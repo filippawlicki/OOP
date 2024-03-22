@@ -1,11 +1,7 @@
 package pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Atrakcja;
-import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.Elektrownia;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.ElektrowniaWodna;
 
-/**
- *
- * @author TB
- */
 public class Student extends Czlowiek{
 
     public Student(String imie, String nazwisko, Plec plec) {
@@ -27,7 +23,7 @@ public class Student extends Czlowiek{
 
     @Override
     public void reagujNaAtrakcje(Atrakcja a, double czas) {
-        if(a instanceof Elektrownia){
+        if(a instanceof ElektrowniaWodna){
             mow("Wiecie co, odpocznijmy w tej elektrowni. Mamy czas na odpoczynek i pozwiedzanie.");
             regeneruj(czas);
         }

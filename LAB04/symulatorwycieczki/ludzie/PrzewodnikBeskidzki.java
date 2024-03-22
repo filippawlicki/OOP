@@ -1,7 +1,7 @@
 package pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Atrakcja;
 //import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wycieczka;
-import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.Elektrownia;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.ElektrowniaWodna;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.Zamek;
 
 public class PrzewodnikBeskidzki extends Czlowiek {
@@ -17,8 +17,8 @@ public class PrzewodnikBeskidzki extends Czlowiek {
 
     @Override
     public void reagujNaAtrakcje(Atrakcja a, double czas) {
-        if(a instanceof Elektrownia) {
-            Elektrownia elek = (Elektrownia) a;
+        if(a instanceof ElektrowniaWodna) {
+            ElektrowniaWodna elek = (ElektrowniaWodna) a;
             mow("To jest elektrownia w " + elek.getNazwaMiejscowosci() + ". Bardzo stara.");
             regeneruj(czas);
         }

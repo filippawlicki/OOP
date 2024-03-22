@@ -1,6 +1,6 @@
 package pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Atrakcja;
-import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.Cmentarz;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.CmentarzZIWojny;
 
 public class LesnyBiegacz extends Czlowiek
 {
@@ -18,9 +18,9 @@ public class LesnyBiegacz extends Czlowiek
     @Override
     public void reagujNaAtrakcje(Atrakcja a, double czas)
     {
-        if(a instanceof Cmentarz)
+        if(a instanceof CmentarzZIWojny)
         {
-            mow("Czy to cmentarz z 1 wojny światowej? Wydaje mi się, że tak, a one bardzo mnie interesują!");
+            mow("Wow, bardzo lubie cmentarze!");
             regeneruj(czas*2);
         }
         else{

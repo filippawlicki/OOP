@@ -2,7 +2,7 @@ package pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Atrakcja;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wycieczka;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.Zamek;
-import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.Elektrownia;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.ElektrowniaWodna;
 
 public class PrzewodnikStudencki extends Student {
 
@@ -27,8 +27,8 @@ public class PrzewodnikStudencki extends Student {
 
     @Override
     public void reagujNaAtrakcje(Atrakcja a, double czas) {
-        if(a instanceof Elektrownia) {
-            Elektrownia elek = (Elektrownia) a;
+        if(a instanceof ElektrowniaWodna) {
+            ElektrowniaWodna elek = (ElektrowniaWodna) a;
             mow("To jest elektrownia w miejscowosci: " + elek.getNazwaMiejscowosci() + ". Uczylem się o niej w gimnazjum, więc mogę coś opowiedzieć.");
             regeneruj(czas);
         }

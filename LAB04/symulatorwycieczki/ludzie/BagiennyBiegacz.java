@@ -1,7 +1,6 @@
 package pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie;
-import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Atrakcja;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wedrowka;
-import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.PrzeprawaPrzezRzeke;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.Rzeka;
 
 public class BagiennyBiegacz extends Czlowiek
 {
@@ -18,9 +17,9 @@ public class BagiennyBiegacz extends Czlowiek
     @Override
     public void reagujNaWedrowke(Wedrowka w, double czas)
     {
-        if(w instanceof PrzeprawaPrzezRzeke)
+        if(w instanceof Rzeka)
         {
-            mow("Lubię takie tereny.");
+            mow("Fajny teren.");
             aktualizujZmeczenie(czas/2);
         }
         else
